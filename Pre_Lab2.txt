@@ -1,0 +1,16 @@
+q1. 
+
+
+q2.
+    mov ax, num ; load the number into ax
+    mov bx, 31  ; load 31 into bx to mask the last 5 bits
+    and ax, bx  ; mask the last 5 bits of the number
+    cmp ax, 0   ; compare the result with 0
+    jne 200     ; if the result is not zero, jump to memory location 200
+
+; memory location 100: code to execute if the number is divisible by 32
+    jmp 300     ; jump to memory location 300 (end of the program)
+
+; memory location 200: code to execute if the number is not divisible by 32
+
+; memory location 300: end of the program

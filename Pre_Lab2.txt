@@ -1,5 +1,27 @@
 q1. 
+    mov ax, num ; load the number into ax
+    mov bx, 0   ; initialize the counter to 0
 
+count_ones:
+    mov cx, ax  ; copy the number into cx
+    and cx, 1   ; bitwise AND with 1 to check the last bit
+    cmp cx, 0   ; compare the result with 0
+    jne increment ; if the result is not zero, jump to increment
+    jmp rotate  ; if the result is zero, jump to rotate
+
+increment:
+    add bx, 1   ; increment the counter
+    jmp rotate  ; jump to rotate
+
+rotate:
+    rol ax, 1   ; rotate the number to the left by 1 bit
+    cmp ax, num ; compare the number with the original number
+    jne count_ones ; if the number is not the original number, jump to count_ones
+
+; memory location 100: code to execute after counting the ones
+    jmp 200     ; jump to memory location 200 (end of the program)
+
+; memory location 200: end of the program
 
 q2.
     mov ax, num ; load the number into ax
@@ -14,3 +36,48 @@ q2.
 ; memory location 200: code to execute if the number is not divisible by 32
 
 ; memory location 300: end of the program
+
+q3.
+section .data
+    ; memory locations for the character counts
+    count1 db 256 dup(0)
+    count2 db 256 dup(0)
+
+section .text
+    ; assume file1 and file2 are already opened and their file handles are in bx and cx respectively
+
+    ; read and count the characters in the first file
+read1:
+    ; assume the character is read into al
+    inc byte [count1 + ax]
+    ; repeat for all characters in file1
+
+    ; read and count the characters in the second file
+read2:
+    ; assume the character is read into al
+    inc byte [count2 + ax]
+    ; repeat for all characters in file2
+
+    ; compare the character counts
+    mov cx, 256
+    mov si, count1
+    mov di, count2
+compare:
+    mov al, [si]
+    cmp al, [di]
+    jne not_anagrams
+    inc si
+    inc di
+    dec cx
+    jnz compare
+
+    ; if we get here, the words are anagrams
+    ; return with zero flag set
+    xor ax, ax
+    ret
+
+not_anagrams:
+    ; if we get here, the words are not anagrams
+    ; return with zero flag cleared
+    mov ax, 1
+    ret

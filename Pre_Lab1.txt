@@ -1,0 +1,27 @@
+ja: Jumps to a specified address or label if the carry flag and the zero flag are both not set. The syntax is ja destination, where destination can be an address or a label. For example, ja loop jumps to the label loop if the carry flag and the zero flag are both not set.
+
+jnbe: This is the same as ja, as nbe stands for not below or equal. The syntax is jnbe destination, where destination can be an address or a label. For example, jnbe loop jumps to the label loop if the carry flag and the zero flag are both not set.
+
+jae: Jumps to a specified address or label if the carry flag is not set or the zero flag is set. The syntax is jae destination, where destination can be an address or a label. For example, jae next jumps to the label next if the carry flag is not set or the zero flag is set.
+
+jnb: This is the same as jae, as nb stands for not below. The syntax is jnb destination, where destination can be an address or a label. For example, jnb next jumps to the label next if the carry flag is not set or the zero flag is set.
+
+jnc: This is the same as jae, as nc stands for not carry. The syntax is jnc destination, where destination can be an address or a label. For example, jnc next jumps to the label next if the carry flag is not set or the zero flag is set.
+
+jb: Jumps to a specified address or label if the carry flag is set. The syntax is jb destination, where destination can be an address or a label. For example, jb exit jumps to the label exit if the carry flag is set.
+
+jc: This is the same as jb, as c stands for carry. The syntax is jc destination, where destination can be an address or a label. For example, jc exit jumps to the label exit if the carry flag is set.
+
+jnae: This is the same as jb, as nae stands for not above or equal. The syntax is jnae destination, where destination can be an address or a label. For example, jnae exit jumps to the label exit if the carry flag is set.
+
+jbe: Jumps to a specified address or label if the carry flag is set or the zero flag is set. The syntax is jbe destination, where destination can be an address or a label. For example, jbe exit jumps to the label exit if the carry flag is set or the zero flag is set.
+
+jna: This is the same as jbe, as na stands for not above. The syntax is jna destination, where destination can be an address or a label. For example, jna exit jumps to the label exit if the carry flag is set or the zero flag is set.
+
+je: Jumps to a specified address or label if the zero flag is set. The syntax is je destination, where destination can be an address or a label. For example, je end jumps to the label end if the zero flag is set.
+
+jz: This is the same as je, as z stands for zero. The syntax is jz destination, where destination can be an address or a label. For example, jz end jumps to the label end if the zero flag is set.
+
+jne: Jumps to a specified address or label if the zero flag is not set. The syntax is jne destination, where destination can be an address or a label. For example, jne loop jumps to the label loop if the zero flag is not set.
+
+jnz: This is the same as jne, as nz stands for not zero. The syntax is jnz destination, where destination can be an address or a label. For example, jnz loop jumps to the label loop if the zero flag is not set.

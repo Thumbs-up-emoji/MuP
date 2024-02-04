@@ -1,4 +1,4 @@
-q1. 
+q1. count 1s in binary representation
     mov ax, num ; load the number into ax
     mov bx, 0   ; initialize the counter to 0
 
@@ -23,7 +23,7 @@ rotate:
 
 ; memory location 200: end of the program
 
-q2.
+q2.check if divisible by 32
     mov ax, num ; load the number into ax
     mov bx, 31  ; load 31 into bx to mask the last 5 bits
     and ax, bx  ; mask the last 5 bits of the number
@@ -37,7 +37,7 @@ q2.
 
 ; memory location 300: end of the program
 
-q3.
+q3.check if 2 words are anagrams
 section .data
     ; memory locations for the character counts
     count1 db 256 dup(0)

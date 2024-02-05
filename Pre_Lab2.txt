@@ -1,3 +1,9 @@
+Rotate and shift are two types of bitwise operations that can be performed on binary data in assembly language. They are used to manipulate the bits in a register or memory location by moving them to the left or right by a specified number of positions. The difference between rotate and shift is that rotate preserves all the bits, while shift discards some bits and fills the empty spaces with zeros or the sign bit.
+
+For example, suppose we have a byte of data 1010 1100 in the AL register. If we apply a rotate left instruction ROL AL, 1, we get 0101 1001 in the AL register and 1 in the carry flag. The leftmost bit 1 is moved to the rightmost position and also copied to the carry flag. If we apply a shift left instruction SHL AL, 1, we get 0101 1000 in the AL register and 1 in the carry flag. The leftmost bit 1 is moved to the carry flag and the rightmost position is filled with 0.
+
+There are four types of rotate instructions: ROL, ROR, RCL, and RCR. ROL and ROR are logical rotates, which do not affect the sign of the data. RCL and RCR are rotate with carry, which use the carry flag as an extra bit to store the shifted bit. There are four types of shift instructions: SHL, SHR, SAL, and SAR. SHL and SHR are logical shifts, which fill the empty spaces with zeros. SAL and SAR are arithmetic shifts, which fill the empty spaces with the sign bit to preserve the sign of the data.
+
 q1. count 1s in binary representation
     mov ax, num ; load the number into ax
     mov bx, 0   ; initialize the counter to 0
